@@ -1,0 +1,111 @@
+/*
+Title: Film & Production Design Portfolio
+Description: Styling for a responsive one-page website with JavaScript navigation.
+Name: Olivia Watson | Date: November 1, 2026
+*/
+:root {
+  --ink: #242421;
+  --muted: #66665f;
+  --paper: #f5f2eb;
+  --card: #fffdf8;
+  --accent: #a84f3d;
+  --accent-dark: #78392f;
+  --line: #ded8cc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+.site-header {
+  padding: 62px 22px 48px;
+  text-align: center;
+  background: #e9e2d6;
+}
+.eyebrow, .section-label, .project-top, footer, .interest-strip {
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.eyebrow { color: var(--accent-dark); margin: 0 0 12px; }
+.site-header h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+.tagline { color: var(--muted); margin: 16px auto 0; max-width: 580px; }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  background: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+nav button {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 10px 22px;
+  color: #f8f5ee;
+  background: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+nav button:hover { background: #4a4942; }
+nav button.active { color: white; background: var(--accent); }
+nav button:focus-visible { outline: 3px solid #e9bd78; outline-offset: 3px; }
+main { width: min(100% - 40px, 940px); margin: 0 auto; min-height: 510px; }
+.page { display: none; padding: 58px 0 70px; animation: appear 240ms ease; }
+.page.active { display: block; }
+@keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.section-label { color: var(--accent); margin: 0 0 13px; }
+h2 {
+  max-width: 760px;
+  margin: 0 0 20px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4.8vw, 3.45rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.intro { max-width: 700px; color: var(--muted); font-size: 1.08rem; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 38px; }
+.feature-card, .project-card { background: var(--card); border: 1px solid var(--line); padding: 24px; }
+.number { color: var(--accent); font-family: Georgia, serif; font-size: 1.3rem; }
+h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 1.5rem; margin: 10px 0 8px; }
+.feature-card p, .project-card p { color: var(--muted); margin: 0 0 8px; font-size: 0.95rem; }
+.small-note { color: var(--muted); font-size: 0.83rem; margin-top: 26px; }
+.about-layout { display: grid; grid-template-columns: 190px 1fr; gap: 35px; align-items: start; margin-top: 30px; }
+.about-layout p { margin-top: 0; color: var(--muted); }
+.about-mark {
+  height: 190px; display: grid; place-items: center; position: relative;
+  background: #e9e2d6; color: var(--accent-dark); font-family: Georgia, serif; font-size: 3.4rem;
+}
+.about-mark span { position: absolute; right: 22px; bottom: 10px; font-size: 1.8rem; color: var(--accent); }
+.interest-strip { display: flex; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; margin-top: 28px; color: var(--accent-dark); }
+.project-list { display: grid; gap: 14px; margin-top: 32px; }
+.project-card { padding: 22px 26px; }
+.project-top { display: flex; justify-content: space-between; color: var(--accent); font-size: 0.68rem; }
+.project-card h3 { margin-top: 8px; }
+.project-card strong { color: var(--ink); }
+.closing-note { margin-top: 28px; font-family: Georgia, serif; font-size: 1.25rem; color: var(--accent-dark); }
+footer { display: flex; justify-content: space-between; gap: 15px; padding: 22px max(20px, calc((100% - 940px) / 2)); background: #e9e2d6; color: var(--muted); font-size: 0.65rem; }
+@media (max-width: 680px) {
+  .site-header { padding: 46px 18px 38px; }
+  main { width: min(100% - 32px, 940px); }
+  .page { padding: 42px 0 55px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .about-layout { grid-template-columns: 1fr; gap: 22px; }
+  .about-mark { width: 150px; height: 150px; }
+  footer { flex-direction: column; }
+  nav button { padding: 10px 17px; }
+}
